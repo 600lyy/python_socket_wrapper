@@ -179,3 +179,26 @@ class SocketThread(threading.Thread, SocketMethods):
                     self.exceptions.put(e)
                     self.socket.close()
                     self.stop_run = True
+
+
+class SessionId(object):
+    # required fixed32 value = 1;
+    value = None
+    
+    def __init__(self):
+        self.value = 0
+    
+    def default(self, o):
+        return o.__dict__
+    
+    def fromJSON(self, json):
+        if json: 
+            self.value = json['value']
+    
+    def toJSON(self):
+        jsonData = {}
+        jsonData['value'] = ""
+        if self.value or self.value is 0 or self.value is "" or self.value is False: 
+            jsonData['value'] = self.value
+            
+        return jsonData
