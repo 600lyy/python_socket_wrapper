@@ -10,6 +10,16 @@ import errno
 
 class MySocket(object):
     """Standard python socket methods for sending and receiving data.
+    
+    The socket runs in blocking mode with a timer of 02 second. 
+    
+    Blocking mode ensures that thread uses this socket suck 100% cpu circle
+    because the thread will be suspened by the OS if there is no data to 
+    receive from the socket receive buffer and as such will yield cpu.
+    
+    The timer ensures performance because it will wake up the thread 
+    so that it can start to handle other jobs like sending 
+    
     """
     def __init__(self, sock=None):
         if sock is None:
