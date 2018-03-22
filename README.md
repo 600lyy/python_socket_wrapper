@@ -27,5 +27,6 @@ use like so:
             self.socket_thread.stop()
             
       
-# SocketThread includes a blocking socket with a timer of 0.2 second. Therefore the SocketThread will be suspended by OS for at least 0.2 seoncd if there is no data to read from the socket receive buffer
-# A socket object can be in one of three modes: blocking, non-blocking, or timeout. Sockets are by default always created in blocking mode, but this can be changed by calling setdefaulttimeout().
+SocketThread includes a blocking socket with a timer of 0.2 second. Therefore the SocketThread will be suspended by OS for at least 0.2 seoncd if there is no data to read from the socket receive buffer
+
+A socket object can be in one of three modes: blocking, non-blocking, or timeout. Sockets are by default always created in blocking mode, but this can be changed by calling setdefaulttimeout().
